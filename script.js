@@ -76,15 +76,25 @@ console.log(letters);
 console.log(...str);
 // console.log(`${...str} Schmedtmann);
 
-const ingredients = [
-  prompt("Let's make pasta! Ingredient 1"),
-  prompt("Ingredient 2"),
-  prompt("Ingredient 3"),
-];
-console.log(ingredients);
+// Real-world Example
+// const ingredients = [
+//   prompt("Let's make pasta! Ingredient 1"),
+//   prompt("Ingredient 2"),
+//   prompt("Ingredient 3"),
+// ];
+//console.log(ingredients);
 
-restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2]);
-restaurant.orderPasta(...ingredients);
+// restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2]);
+// restaurant.orderPasta(...ingredients);
+
+// Objects
+const newRestaurant = { foundedIn: 1998, ...restaurant, founder: "Guiseppe" };
+console.log(newRestaurant);
+
+const restaurantCopy = { ...restaurant };
+restaurantCopy.name = "Ristorante Roma";
+console.log(restaurantCopy.name);
+console.log(restaurant.name);
 
 //* Destructuring Objects *//
 // restaurant.orderDelivery({
