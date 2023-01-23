@@ -54,6 +54,17 @@ const restaurant = {
   },
 };
 
+//* Looping Arrays: The for-of Loop *//
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+for (const item of menu) console.log(item);
+
+for (const [i, el] of menu.entries()) {
+  console.log(`${i + 1}: ${el}`);
+}
+
+//console.log([...menu.entries()]);
+
 //* Coding Challenge #1 *//
 /* 
 We're building a football betting app (soccer for my American friends 😅)!
@@ -115,38 +126,38 @@ const game = {
 };
 
 // 1.
-const [players1, players2] = game.players;
-console.log(players1, players2);
+// const [players1, players2] = game.players;
+// console.log(players1, players2);
 
 // 2.
-const [gk, ...fieldPlayers] = players1;
-console.log(gk, fieldPlayers);
+// const [gk, ...fieldPlayers] = players1;
+// console.log(gk, fieldPlayers);
 
 // 3.
-const allPlayers = [...players1, ...players2];
-console.log(allPlayers);
+// const allPlayers = [...players1, ...players2];
+// console.log(allPlayers);
 
 // 4.
-const players1Final = [...players1, "Thiago", "Coutinho", "Periscic"];
+// const players1Final = [...players1, "Thiago", "Coutinho", "Periscic"];
 
 // 5.
-const {
-  odds: { team1, x: draw, team2 },
-} = game;
-console.log(team1, draw, team2);
+// const {
+//   odds: { team1, x: draw, team2 },
+// } = game;
+// console.log(team1, draw, team2);
 
 // 6.
-const printGoals = function (...players) {
-  console.log(players);
-  console.log(`${players.length} goals were scored`);
-};
+// const printGoals = function (...players) {
+//   console.log(players);
+//   console.log(`${players.length} goals were scored`);
+// };
 // printGoals('Davies', 'Muller', 'Lewandowski', 'Kimmich');
 // printGoals('Davies', 'Muller');
-printGoals(...game.scored);
+// printGoals(...game.scored);
 
 // 7.
-team1 < team2 && console.log("Team 1 is more likely to win");
-team1 > team2 && console.log("Team 2 is more likely to win");
+// team1 < team2 && console.log("Team 1 is more likely to win");
+// team1 > team2 && console.log("Team 2 is more likely to win");
 
 //* Logical Assignment Operators *//
 
