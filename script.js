@@ -52,40 +52,72 @@ const restaurant = {
   },
 };
 
+//* Maps: Fundamentals *//
+
+const rest = new Map();
+rest.set("name", "Classico Italiano");
+rest.set(1, "Firenze, Italy");
+console.log(rest.set(2, "Lisbon, Portugal"));
+
+rest
+  .set("categories", ["Italian", "Pizzeria", "Vegetarian", "Organic"])
+  .set("open", 11)
+  .set("close", 23)
+  .set(true, "We are Open :D")
+  .set(false, "We are Closed :(");
+
+console.log(rest.get("name"));
+console.log(rest.get(true));
+
+const time = 8;
+console.log(rest.get(time > rest.get("open") && time < rest.get("close")));
+
+console.log(rest.has("categories"));
+rest.delete(2);
+//rest.clear();
+console.log(rest);
+console.log(rest.size);
+
+const arr = [1, 2];
+rest.set(arr, "Test");
+console.log(rest.size);
+
+console.log(rest.get(arr));
+
 //* Sets *//
 
-const ordersSet = new Set([
-  "Pasta",
-  "Pizza",
-  "Pizza",
-  "Risotto",
-  "Pasta",
-  "Pizza",
-]);
-console.log(ordersSet);
+// const ordersSet = new Set([
+//   "Pasta",
+//   "Pizza",
+//   "Pizza",
+//   "Risotto",
+//   "Pasta",
+//   "Pizza",
+// ]);
+// console.log(ordersSet);
 
-console.log(new Set("Jonas"));
+// console.log(new Set("Jonas"));
 
-console.log(ordersSet.size);
-console.log(ordersSet.has("Pizza"));
-console.log(ordersSet.has("Bread"));
-ordersSet.add("Garlic Bread");
-ordersSet.add("Garlic Bread");
-ordersSet.delete("Risotto");
+// console.log(ordersSet.size);
+// console.log(ordersSet.has("Pizza"));
+// console.log(ordersSet.has("Bread"));
+// ordersSet.add("Garlic Bread");
+// ordersSet.add("Garlic Bread");
+// ordersSet.delete("Risotto");
 //ordersSet.clear();
-console.log(ordersSet);
+// console.log(ordersSet);
 
-for (const order of ordersSet) console.log(order);
+// for (const order of ordersSet) console.log(order);
 
 // Example
-const staff = ["Waiter", "Chef", "Waiter", "Manager", "Chef", "Waiter"];
-const staffUnique = [...new Set(staff)];
-console.log(staffUnique);
-console.log(
-  new Set(["Waiter", "Chef", "Waiter", "Manager", "Chef", "Waiter"]).size
-);
+// const staff = ["Waiter", "Chef", "Waiter", "Manager", "Chef", "Waiter"];
+// const staffUnique = [...new Set(staff)];
+// console.log(staffUnique);
+// console.log(
+//   new Set(["Waiter", "Chef", "Waiter", "Manager", "Chef", "Waiter"]).size
+// );
 
-console.log(new Set("jonasschmedtmann").size);
+// console.log(new Set("jonasschmedtmann").size);
 // Conclusion Sets are not intended to replace arrays. That's also true when you need to really manipulate data because arrays have access to alot of great array methods that we're going to study later on...
 
 //* Coding Challenge #2 *//
