@@ -52,6 +52,48 @@ const restaurant = {
   },
 };
 
+//* Working with Strings - Part 1 *//
+
+const airline = "TAP Air Portugal";
+const plane = "A320";
+
+console.log(plane[0]);
+console.log(plane[1]);
+console.log(plane[2]);
+console.log("B737"[0]);
+
+console.log(airline.length);
+console.log("B737".length);
+
+console.log(airline.indexOf("r"));
+console.log(airline.lastIndexOf("r"));
+console.log(airline.indexOf("portugal"));
+
+console.log(airline.slice(4));
+console.log(airline.slice(4, 7));
+
+console.log(airline.slice(0, airline.indexOf(" ")));
+console.log(airline.slice(airline.lastIndexOf(" ") + 1));
+
+console.log(airline.slice(-2));
+console.log(airline.slice(1, -1));
+
+const checkMiddleSeat = function (seat) {
+  // B and E are middle seats
+  const s = seat.slice(-1);
+  if (s === "B" || s === "E") console.log("You got the middle seat 😬");
+  else console.log("You got lucky 😎");
+};
+
+checkMiddleSeat("11B");
+checkMiddleSeat("23C");
+checkMiddleSeat("3E");
+
+console.log(new String("jonas"));
+console.log(typeof new String("jonas"));
+
+console.log(typeof new String("jonas").slice(1));
+
 //* Coding Challenge #3 *//
 /* 
 Let's continue with our football betting app! This time, we have a map with a log of the events that happened during the game. The values are the events themselves, and the keys are the minutes in which each event happened (a football game has 90 minutes plus some extra time).
@@ -80,27 +122,27 @@ const gameEvents = new Map([
 ]);
 
 // 1.
-const events = [...new Set(gameEvents.values())];
-console.log(events);
+// const events = [...new Set(gameEvents.values())];
+// console.log(events);
 
 // 2.
-gameEvents.delete(64);
+// gameEvents.delete(64);
 
 // 3.
-console.log(
-  `An event happened, on average, every ${90 / gameEvents.size} minutes`
-);
-const time = [...gameEvents.keys()].pop();
-console.log(time);
-console.log(
-  `An event happened, on average, every ${time / gameEvents.size} minutes`
-);
+// console.log(
+//   `An event happened, on average, every ${90 / gameEvents.size} minutes`
+// );
+// const time = [...gameEvents.keys()].pop();
+// console.log(time);
+// console.log(
+//   `An event happened, on average, every ${time / gameEvents.size} minutes`
+// );
 
 // 4.
-for (const [min, event] of gameEvents) {
-  const half = min <= 45 ? "FIRST" : "SECOND";
-  console.log(`[${half} HALF] ${min}: ${event}`);
-}
+// for (const [min, event] of gameEvents) {
+//   const half = min <= 45 ? "FIRST" : "SECOND";
+//   console.log(`[${half} HALF] ${min}: ${event}`);
+// }
 
 //* Maps: Iteration *//
 
