@@ -80,6 +80,7 @@ console.log(rest.size);
 
 const arr = [1, 2];
 rest.set(arr, "Test");
+rest.set(document.querySelector("h1"), "Heading");
 console.log(rest.size);
 
 console.log(rest.get(arr));
